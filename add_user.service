@@ -1,0 +1,10 @@
+[Unit]
+Description=add user maintenance script
+
+[Service]
+WorkingDirectory=/home/ubuntu/utils/fx-test-pubkeys
+ExecStart=/bin/bash add-user.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target.wants
