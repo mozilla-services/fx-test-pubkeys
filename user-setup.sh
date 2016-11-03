@@ -6,9 +6,9 @@ REPO=$(basename $URL_KEY_REPO)
 
 
 echo
-echo "-------------------------------"
+echo "--------------------------------"
 echo "INSTALL ADD-USER INIT SCRIPT"
-echo "-------------------------------"
+echo "--------------------------------"
 echo
 cd /home/ubuntu
 mkdir utils
@@ -19,9 +19,9 @@ cd /etc/systemd/system/multi-user.target.wants
 ln -s /home/ubuntu/utils/$REPO/add_users.service .
 
 echo
-echo "-------------------------------"
+echo "--------------------------------"
 echo "ADDING USERS"
-echo "-------------------------------"
+echo "--------------------------------"
 echo
 add-user.sh
 echo 
