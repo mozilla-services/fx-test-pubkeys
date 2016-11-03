@@ -18,8 +18,8 @@ function os_dist() {
 }
 
 function adduser_ubuntu() {
-    adduser  --disabled-password --gecos "" $user
-    adduser $user sudo
+    adduser  --disabled-password --gecos "" $1
+    adduser $1 sudo
 }
 
 function adduser_centos() {
