@@ -10,6 +10,8 @@ function os_dist() {
         OS="Ubuntu"
     elif grep -q "CentOS" /etc/os-release 2> /dev/null; then
         OS="CentOS"
+    elif grep -q "CoreOS" /etc/os-release 2> /dev/null; then
+        OS="CoreOS"
     else
         echo "ERROR: OS not recognized --> ABORTING!!"
         exit 1
@@ -23,16 +25,24 @@ function adduser_ubuntu() {
 }
 
 function adduser_centos() {
-   adduser $1 
-   passwd -d $1 
-   usermod -aG wheel $1 
+    adduser $1 
+    passwd -d $1 
+    usermod -aG wheel $1 
+}
+
+function adduser_coreos() {
+    sudo useradd -p "*" -U -m $1 -G sudo
 }
 
 function adduser_dist() {
    if [[ "$OS" == "Ubuntu" ]]; then
        adduser_ubuntu $1
-   else [[ "$OS" == "CentOS" ]]; then
+   elif [[ "$OS" == "CentOS" ]]; then
        adduser_centos $1 
+   elif [[ "$OS" == "CoreOS" ]]; then
+       adduser_coreos $1 
+   else
+       exit 1
    fi
 }
 
