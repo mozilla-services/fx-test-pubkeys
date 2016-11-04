@@ -39,7 +39,7 @@ function adduser_dist() {
        adduser_ubuntu $1
    elif [[ "$OS" == "CentOS" ]]; then
        adduser_centos $1 
-   elif [[ "$OS" == "CentOS" ]]; then
+   elif [[ "$OS" == "CoreOS" ]]; then
        adduser_coreos $1 
    else
        exit 1
