@@ -14,7 +14,7 @@ cd $HOME
 mkdir utils
 cd utils
 git clone $URL_KEY_REPO
-cd $HOME/$REPO
+cd $HOME/utils/$REPO
 sudo su
 cd /etc/systemd/system/multi-user.target.wants
 ln -s /home/ubuntu/utils/$REPO/add_users.service .
@@ -24,6 +24,6 @@ echo "--------------------------------"
 echo "ADDING USERS"
 echo "--------------------------------"
 echo
-add-user.sh
+$HOME/utils/$REPO/add-user.sh
 echo 
 echo "DONE!"
