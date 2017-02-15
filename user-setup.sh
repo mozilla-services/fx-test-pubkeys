@@ -10,10 +10,11 @@ echo "--------------------------------"
 echo "INSTALL ADD-USER INIT SCRIPT"
 echo "--------------------------------"
 echo
-cd /home/ubuntu
+cd $HOME 
 mkdir utils
 cd utils
-cd $URL_KEY_REPO
+git clone $URL_KEY_REPO
+cd $HOME/$REPO
 sudo su
 cd /etc/systemd/system/multi-user.target.wants
 ln -s /home/ubuntu/utils/$REPO/add_users.service .
