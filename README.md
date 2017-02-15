@@ -31,3 +31,7 @@ If people join the team and you add keys to this repo, you must notify the team 
 
 We trust github and git because you can't modify the keys without also changing the SHA.
 
+# update-user.sh
+
+wget this script to your host, then run.
+
